@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanka.Nancy.Optimization", "Tanka.Nancy.Optimization\Tanka.Nancy.Optimization.csproj", "{AB960092-22F2-4EA9-8F2F-592C0B0E8CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanka.Nancy.OptimizationTests", "Tanka.Nancy.OptimizationTests\Tanka.Nancy.OptimizationTests.csproj", "{16DBADDF-069D-4D92-88C9-8CE859094F1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB960092-22F2-4EA9-8F2F-592C0B0E8CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB960092-22F2-4EA9-8F2F-592C0B0E8CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB960092-22F2-4EA9-8F2F-592C0B0E8CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB960092-22F2-4EA9-8F2F-592C0B0E8CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
