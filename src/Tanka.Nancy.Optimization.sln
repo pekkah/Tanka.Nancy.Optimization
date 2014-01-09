@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanka.Nancy.Optimization", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanka.Nancy.OptimizationTests", "Tanka.Nancy.OptimizationTests\Tanka.Nancy.OptimizationTests.csproj", "{16DBADDF-069D-4D92-88C9-8CE859094F1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tanka.Nancy.Optimization.AjaxMin", "Tanka.Nancy.Optimization.AjaxMin\Tanka.Nancy.Optimization.AjaxMin.csproj", "{C8709ECD-CD7B-47E1-B149-E41CE90179C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16DBADDF-069D-4D92-88C9-8CE859094F1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8709ECD-CD7B-47E1-B149-E41CE90179C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8709ECD-CD7B-47E1-B149-E41CE90179C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8709ECD-CD7B-47E1-B149-E41CE90179C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8709ECD-CD7B-47E1-B149-E41CE90179C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

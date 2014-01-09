@@ -5,6 +5,7 @@
     using global::Nancy;
     using global::Nancy.Testing;
     using Optimization;
+    using Optimization.AjaxMin;
     using Xunit;
 
     public class MyScriptBundle : ScriptBundle
@@ -59,7 +60,11 @@
                         with.Module<BundlerModule>();
 
                         with.ApplicationStartup(
-                            (ioc, context) => { ioc.RegisterMultiple<ScriptBundle>(new[] {typeof (MyScriptBundle)}); });
+                            (ioc, context) =>
+                            {
+                                ioc.RegisterMultiple<ScriptBundle>(new[] {typeof (MyScriptBundle)});
+                                ioc.Register<IBundler<ScriptBundle>, AjaxMinBundler>();
+                            });
                     });
 
             // act

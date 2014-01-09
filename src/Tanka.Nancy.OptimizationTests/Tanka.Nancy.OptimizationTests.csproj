@@ -67,14 +67,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tanka.Nancy.Optimization.AjaxMin\Tanka.Nancy.Optimization.AjaxMin.csproj">
+      <Project>{c8709ecd-cd7b-47e1-b149-e41ce90179c8}</Project>
+      <Name>Tanka.Nancy.Optimization.AjaxMin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tanka.Nancy.Optimization\Tanka.Nancy.Optimization.csproj">
       <Project>{ab960092-22f2-4ea9-8f2f-592c0b0e8ceb}</Project>
       <Name>Tanka.Nancy.Optimization</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Script2.js" />
-    <Content Include="Content\Script1.js" />
+    <Content Include="Content\Script2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Script1.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
