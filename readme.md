@@ -6,6 +6,14 @@ framework.
 
 ## Usage
 
+```
+// bundler core package
+Install-Package Tanka.Nancy.Optimization -Pre
+
+// install bundlers implemented using AjaxMin package
+Install-Package Tanka.Nancy.Optimization.AjaxMin -Pre
+```
+
 Register IScriptBundler and IStyleBundler implementations to your 
 nancy bootstrapper container.
 
