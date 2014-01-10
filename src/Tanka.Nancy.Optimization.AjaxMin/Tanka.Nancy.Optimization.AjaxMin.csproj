@@ -48,6 +48,7 @@
     <Compile Include="..\Packaging\AssemblyInfo.cs">
       <Link>AssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AjaxMinBundlerRegistrations.cs" />
     <Compile Include="ScriptBundler.cs" />
     <Compile Include="AjaxMinBundlerBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

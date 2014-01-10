@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="Bundle.cs" />
     <Compile Include="Bundler.cs" />
+    <Compile Include="BundlerRegistration.cs" />
     <Compile Include="BundleTable.cs" />
     <Compile Include="IStyleBundler.cs" />
     <Compile Include="IScriptBundler.cs" />

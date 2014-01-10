@@ -30,17 +30,7 @@
             // arrange
             var browser =
                 new Browser(
-                    with =>
-                    {
-                        with.Module<StyleBundlerModule>();
-
-                        with.ApplicationStartup(
-                            (ioc, context) =>
-                            {
-                                ioc.RegisterMultiple<StyleBundle>(new[] {typeof (MyStyleBundle)});
-                                ioc.Register<IStyleBundler, StyleBundler>();
-                            });
-                    });
+                    with => with.Module<StyleBundlerModule>());
 
             // act
             BrowserResponse result = browser.Get("/css/bundle.css");

@@ -14,28 +14,9 @@ Install-Package Tanka.Nancy.Optimization -Pre
 Install-Package Tanka.Nancy.Optimization.AjaxMin -Pre
 ```
 
-Register IScriptBundler and IStyleBundler implementations to your 
-nancy bootstrapper container.
-
-Example: Autofac Bootstrapper using the AjaxMin found in
-Tanka.Nancy.Optimization.AjaxMin
-```
-builder.RegisterType<ScriptBundler>().AsImplementedInterfaces();
-builder.RegisterType<StyleBundler>().AsImplementedInterfaces();
-
-builder.RegisterAssemblyTypes(typeof (ThemeStyleBundle).Assembly)
-       .Where(type => typeof (StyleBundle).IsAssignableFrom(type))
-       .As<StyleBundle>()
-       .SingleInstance();
-
-builder.RegisterAssemblyTypes(typeof (CoreScriptBundle).Assembly)
-       .Where(type => typeof (ScriptBundle).IsAssignableFrom(type))
-       .As<ScriptBundle>()
-       .SingleInstance();
-
-```
-
-Implement bundles by inheriting from ScriptBundle or StyleBundle
+Implement bundles by inheriting from ScriptBundle or StyleBundle.
+Following the happy path will result in these bundles getting 
+automatically registered by Nancy upon application startup.
 ```
 public class CoreScriptBundle : ScriptBundle
 {

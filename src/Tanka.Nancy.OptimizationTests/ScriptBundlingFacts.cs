@@ -5,7 +5,6 @@
     using global::Nancy;
     using global::Nancy.Testing;
     using Optimization;
-    using Optimization.AjaxMin;
     using Xunit;
 
     public class MyScriptBundle : ScriptBundle
@@ -30,17 +29,7 @@
             // arrange
             var browser =
                 new Browser(
-                    with =>
-                    {
-                        with.Module<ScriptBundlerModule>();
-
-                        with.ApplicationStartup(
-                            (ioc, context) =>
-                            {
-                                ioc.RegisterMultiple<ScriptBundle>(new[] {typeof (MyScriptBundle)});
-                                ioc.Register<IScriptBundler, ScriptBundler>();
-                            });
-                    });
+                    with => with.Module<ScriptBundlerModule>());
 
             // act
             BrowserResponse result = browser.Get("/js/bundle.js");
