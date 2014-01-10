@@ -48,13 +48,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Packaging\AssemblyInfo.cs">
+      <Link>AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="Bundle.cs" />
     <Compile Include="Bundler.cs" />
     <Compile Include="BundleTable.cs" />
+    <Compile Include="IStyleBundler.cs" />
+    <Compile Include="IScriptBundler.cs" />
     <Compile Include="ScriptBundle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BundlerModule.cs" />
+    <Compile Include="ScriptBundlerModule.cs" />
     <Compile Include="Scripts.cs" />
+    <Compile Include="StyleBundle.cs" />
+    <Compile Include="StyleBundlerModule.cs" />
+    <Compile Include="Styles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

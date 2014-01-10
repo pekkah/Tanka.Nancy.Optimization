@@ -62,9 +62,10 @@
   <ItemGroup>
     <Compile Include="ScriptBundlingFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StyleBundlingFacts.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="Content\packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tanka.Nancy.Optimization.AjaxMin\Tanka.Nancy.Optimization.AjaxMin.csproj">
@@ -81,6 +82,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Script1.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\style2.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\style1.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

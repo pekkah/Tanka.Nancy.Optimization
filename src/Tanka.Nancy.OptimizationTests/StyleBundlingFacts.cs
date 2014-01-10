@@ -8,18 +8,18 @@
     using Optimization.AjaxMin;
     using Xunit;
 
-    public class MyScriptBundle : ScriptBundle
+    public class MyStyleBundle : StyleBundle
     {
-        public MyScriptBundle() : base("/js/bundle.js")
+        public MyStyleBundle() : base("/css/bundle.css")
         {
-            Include("/Content/script1.js");
-            Include("/Content/script2.js");
+            Include("/Content/style1.css");
+            Include("/Content/style2.css");
         }
     }
 
-    public class ScriptBundlingFacts
+    public class StyleBundlingFacts
     {
-        public ScriptBundlingFacts()
+        public StyleBundlingFacts()
         {
             BundleTable.Bundles.Clear();
         }
@@ -32,32 +32,32 @@
                 new Browser(
                     with =>
                     {
-                        with.Module<ScriptBundlerModule>();
+                        with.Module<StyleBundlerModule>();
 
                         with.ApplicationStartup(
                             (ioc, context) =>
                             {
-                                ioc.RegisterMultiple<ScriptBundle>(new[] {typeof (MyScriptBundle)});
-                                ioc.Register<IScriptBundler, ScriptBundler>();
+                                ioc.RegisterMultiple<StyleBundle>(new[] {typeof (MyStyleBundle)});
+                                ioc.Register<IStyleBundler, StyleBundler>();
                             });
                     });
 
             // act
-            BrowserResponse result = browser.Get("/js/bundle.js");
+            BrowserResponse result = browser.Get("/css/bundle.css");
 
             // assert
             result.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.OK);
         }
 
         [Fact]
-        public void ShouldRenderListOfScriptsWhenNotOptimizing()
+        public void ShouldRenderListOfStylesWhenNotOptimizing()
         {
             // arrange
             var expectedHtml = new StringBuilder();
-            expectedHtml.AppendLine("<script src=\"/Content/script1.js\"></script>");
-            expectedHtml.AppendLine("<script src=\"/Content/script2.js\"></script>");
+            expectedHtml.AppendLine("<link rel=\"stylesheet\" href=\"/Content/style1.css\" />");
+            expectedHtml.AppendLine("<link rel=\"stylesheet\" href=\"/Content/style2.css\" />");
 
-            var bundle = new MyScriptBundle();
+            var bundle = new MyStyleBundle();
 
             // act
             string html = bundle.RenderHtml(false);
@@ -67,12 +67,12 @@
         }
 
         [Fact]
-        public void ShouldRenderScriptPointingToBundleWhenOptimizing()
+        public void ShouldRenderStylePointingToBundleWhenOptimizing()
         {
             // arrange
-            const string expectedHtml = "<script src=\"/js/bundle.js\"></script>";
+            const string expectedHtml = "<link rel=\"stylesheet\" href=\"/css/bundle.css\" />";
 
-            var bundle = new MyScriptBundle();
+            var bundle = new MyStyleBundle();
 
             // act
             string html = bundle.RenderHtml(true);

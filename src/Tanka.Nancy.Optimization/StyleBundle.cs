@@ -2,15 +2,16 @@
 {
     using System.Text;
 
-    public abstract class ScriptBundle : Bundle
+    public abstract class StyleBundle : Bundle
     {
-        protected ScriptBundle(string path) : base(path)
+        protected StyleBundle(string path) : base(path)
         {
         }
 
         protected override string RenderOptimizedHtml()
         {
-            return string.Format("<script src=\"{0}\"></script>", Path);
+            // <link rel="stylesheet" href="/tanka/theme.css">
+            return string.Format("<link rel=\"stylesheet\" href=\"{0}\" />", Path);
         }
 
         protected override string RenderUnoptimizedHtml()
@@ -19,7 +20,7 @@
 
             foreach (string file in Files)
             {
-                builder.AppendLine(string.Format("<script src=\"{0}\"></script>", file));
+                builder.AppendLine(string.Format("<link rel=\"stylesheet\" href=\"{0}\" />", file));
             }
 
             return builder.ToString();

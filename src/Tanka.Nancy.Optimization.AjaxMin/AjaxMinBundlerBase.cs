@@ -4,20 +4,17 @@
     using System.IO;
     using System.Text;
     using global::Nancy;
-    using Microsoft.Ajax.Utilities;
 
-    public class AjaxMinBundler : IBundler<ScriptBundle>
+    public abstract class AjaxMinBundlerBase
     {
-        private readonly Minifier _minifier;
         private readonly IRootPathProvider _rootPathProvider;
 
-        public AjaxMinBundler(IRootPathProvider rootPathProvider)
+        protected AjaxMinBundlerBase(IRootPathProvider rootPathProvider)
         {
             _rootPathProvider = rootPathProvider;
-            _minifier = new Minifier();
         }
 
-        public string Bundle(ScriptBundle bundle)
+        protected string Combine(Bundle bundle)
         {
             var builder = new StringBuilder();
 
@@ -34,16 +31,13 @@
             }
 
             string combined = builder.ToString();
-
-            return _minifier.MinifyJavaScript(combined);
+            return combined;
         }
 
         private string GetFullPath(string path)
         {
-            path = path.TrimStart('/');
-            
-            var rootPath = _rootPathProvider.GetRootPath();
-            return Path.Combine(rootPath, path);
+            string rootPath = _rootPathProvider.GetRootPath();
+            return Path.Combine(rootPath, path.TrimStart('/'));
         }
     }
 }

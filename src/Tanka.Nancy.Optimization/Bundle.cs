@@ -25,5 +25,16 @@
         {
             _files.Add(file);
         }
+
+        public string RenderHtml(bool optimize)
+        {
+            if (optimize)
+                return RenderOptimizedHtml();
+
+            return RenderUnoptimizedHtml();
+        }
+
+        protected abstract string RenderOptimizedHtml();
+        protected abstract string RenderUnoptimizedHtml();
     }
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <projectUrl>htts://github.com/pekkah/Tanka.Nancy.Optimization</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>htts://github.com/pekkah/Tanka.Nancy.Optimization</releaseNotes>
+    <copyright>Copyright 2014 Pekka Heikura</copyright>
+    <tags>Tanka NancyFx Optimization AjaxMin</tags>
+  </metadata>
+</package>

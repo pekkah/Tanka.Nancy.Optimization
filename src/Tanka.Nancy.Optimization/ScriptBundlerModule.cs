@@ -4,9 +4,9 @@
     using System.Collections.Generic;
     using global::Nancy;
 
-    public class BundlerModule : NancyModule
+    public class ScriptBundlerModule : NancyModule
     {
-        public BundlerModule(IEnumerable<ScriptBundle> bundles, IBundler<ScriptBundle> bundler)
+        public ScriptBundlerModule(IEnumerable<ScriptBundle> bundles, IScriptBundler bundler)
         {
             if (bundles == null) throw new ArgumentNullException("bundles");
 
@@ -16,16 +16,11 @@
 
                 Get[bundle.Path] = parameters =>
                 {
-                    var content = bundler.Bundle(local);
+                    string content = bundler.Bundle(local);
 
-                    return Response.AsText(content, "text/javascript");
+                    return Response.AsText(content, "application/javascript");
                 };
             }
         }
-    }
-
-    public interface IBundler<in T> where T: Bundle
-    {
-        string Bundle(T bundle);
     }
 }
