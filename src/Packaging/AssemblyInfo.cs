@@ -9,4 +9,4 @@
 
 [assembly: AssemblyFileVersion("1.0.0")]
 [assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyInformationalVersion("0.1.2-beta")]
+[assembly: AssemblyInformationalVersion("0.1.3-beta")]

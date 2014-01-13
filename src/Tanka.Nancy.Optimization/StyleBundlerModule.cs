@@ -18,7 +18,7 @@
                 {
                     string content = bundler.Bundle(local);
 
-                    return Response.AsText(content, "text/css");
+                    return Response.AsText(content, "text/css;charset=utf-8");
                 };
             }
         }

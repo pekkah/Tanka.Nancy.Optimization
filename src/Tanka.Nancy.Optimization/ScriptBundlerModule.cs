@@ -18,7 +18,7 @@
                 {
                     string content = bundler.Bundle(local);
 
-                    return Response.AsText(content, "application/javascript");
+                    return Response.AsText(content, "application/javascript;charset=utf-8");
                 };
             }
         }

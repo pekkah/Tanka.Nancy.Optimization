@@ -36,6 +36,7 @@
 
             // assert
             result.StatusCode.ShouldBeEquivalentTo(HttpStatusCode.OK);
+            result.ContentType.ShouldAllBeEquivalentTo("application/javascript;charset=utf-8");
         }
 
         [Fact]
