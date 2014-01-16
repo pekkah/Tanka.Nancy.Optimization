@@ -8,6 +8,11 @@
         {
         }
 
+        public override string ContentType
+        {
+            get { return "text/css;charset=utf-8"; }
+        }
+
         protected override string RenderOptimizedHtml()
         {
             // <link rel="stylesheet" href="/tanka/theme.css">

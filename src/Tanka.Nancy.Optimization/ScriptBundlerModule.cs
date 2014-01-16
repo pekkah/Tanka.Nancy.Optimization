@@ -14,12 +14,7 @@
             {
                 ScriptBundle local = bundle;
 
-                Get[bundle.Path] = parameters =>
-                {
-                    string content = bundler.Bundle(local);
-
-                    return Response.AsText(content, "application/javascript;charset=utf-8");
-                };
+                Get[bundle.Path] = parameters => BundleTable.Bundles.Cache.Get(local, bundler.Bundle);
             }
         }
     }

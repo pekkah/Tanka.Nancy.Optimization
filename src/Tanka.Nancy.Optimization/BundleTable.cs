@@ -21,6 +21,7 @@
         }
 
         public bool Optimize { get; set; }
+        public IBundleCache Cache { get; set; }
 
         private static BundleTable CreateTable()
         {

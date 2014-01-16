@@ -1,6 +1,10 @@
 ﻿namespace Tanka.Nancy.Optimization
 {
+    using System;
     using System.Collections.Generic;
+    using System.IO;
+    using System.Security.Cryptography;
+    using System.Text;
 
     public abstract class Bundle
     {
@@ -21,6 +25,8 @@
             get { return _files; }
         }
 
+        public abstract string ContentType { get; }
+
         public void Include(string file)
         {
             _files.Add(file);
@@ -36,5 +42,22 @@
 
         protected abstract string RenderOptimizedHtml();
         protected abstract string RenderUnoptimizedHtml();
+
+        public string GetCacheKey()
+        {
+            var builder = new StringBuilder();
+
+            foreach (string file in Files)
+            {
+                var fileInfo = new FileInfo(file);
+                builder.Append(fileInfo.LastWriteTimeUtc.ToFileTimeUtc());
+            }
+
+            string hashThis = builder.ToString();
+            SHA1 hasher = SHA1.Create();
+            byte[] hash = hasher.ComputeHash(Encoding.UTF8.GetBytes(hashThis));
+
+            return BitConverter.ToString(hash).Replace("-", "");
+        }
     }
 }

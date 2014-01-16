@@ -6,7 +6,6 @@
 [assembly: AssemblyCopyright("Copyright ©  2014 Pekka Heikura")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-
 [assembly: AssemblyFileVersion("1.0.0")]
 [assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyInformationalVersion("0.1.3-beta")]
+[assembly: AssemblyInformationalVersion("0.2.0-beta")]

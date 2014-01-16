@@ -55,6 +55,7 @@
     <Compile Include="Bundler.cs" />
     <Compile Include="BundlerRegistration.cs" />
     <Compile Include="BundleTable.cs" />
+    <Compile Include="IBundleCache.cs" />
     <Compile Include="IStyleBundler.cs" />
     <Compile Include="IScriptBundler.cs" />
     <Compile Include="ScriptBundle.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="StyleBundle.cs" />
     <Compile Include="StyleBundlerModule.cs" />
     <Compile Include="Styles.cs" />
+    <Compile Include="MemoryCache.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

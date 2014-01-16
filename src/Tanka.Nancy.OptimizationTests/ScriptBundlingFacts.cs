@@ -21,6 +21,7 @@
         public ScriptBundlingFacts()
         {
             BundleTable.Bundles.Clear();
+            Bundler.Enable(true);
         }
 
         [Fact]
@@ -69,6 +70,19 @@
 
             // assert
             html.ShouldBeEquivalentTo(expectedHtml);
+        }
+
+        [Fact]
+        public void ShouldHaveCacheKey()
+        {
+            /* arrange */
+            var bundle = new MyScriptBundle();
+
+            /* act */
+            var key = bundle.GetCacheKey();
+
+            /* assert */
+            key.Should().NotBeNullOrWhiteSpace();
         }
     }
 }

@@ -8,6 +8,11 @@
         {
         }
 
+        public override string ContentType
+        {
+            get { return "application/javascript;charset=utf-8"; }
+        }
+
         protected override string RenderOptimizedHtml()
         {
             return string.Format("<script src=\"{0}\"></script>", Path);
