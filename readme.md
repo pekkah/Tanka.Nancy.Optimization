@@ -1,6 +1,8 @@
 Tanka Nancy Optimization framework
 ==================================
 
+[![Build status](https://ci.appveyor.com/api/projects/status/n146x6l4p1v15v30)](https://ci.appveyor.com/project/pekkah/tanka-nancy-optimization)
+
 Simple prototype javascript and stylesheet optimization
 framework. 
 
