@@ -8,4 +8,4 @@
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyFileVersion("1.0.0")]
 [assembly: AssemblyVersion("1.0.0")]
-[assembly: AssemblyInformationalVersion("0.2.0-beta")]
+[assembly: AssemblyInformationalVersion("1.0.0-rc2")]

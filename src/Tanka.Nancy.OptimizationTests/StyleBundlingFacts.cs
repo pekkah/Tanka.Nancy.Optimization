@@ -5,7 +5,6 @@
     using global::Nancy;
     using global::Nancy.Testing;
     using Optimization;
-    using Optimization.AjaxMin;
     using Xunit;
 
     public class MyStyleBundle : StyleBundle
@@ -22,6 +21,7 @@
         public StyleBundlingFacts()
         {
             BundleTable.Bundles.Clear();
+            Bundler.Enable(false);
         }
 
         [Fact]
